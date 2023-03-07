@@ -78,6 +78,9 @@ folders = {1: 'Counter',
            76: 'JSON.stringify'}
 
 for number, folder in folders.items():
-    os.makedirs(str(number) + '. ' + folder)
-    with open(os.path.join(str(number) + '. ' + folder, 'README.md'), 'w') as f:
-        f.write('# ' + str(number) + '. ' + folder + '\n')
+    folder_name = str(number) + '. ' + folder
+    os.makedirs(folder_name)
+    with open(os.path.join(folder_name, 'README.md'), 'w') as f:
+        f.write('# ' + folder_name + '\n')
+    with open(os.path.join(folder_name, 'index.js'), 'w') as f:
+         f.write('// This is the index.js file for ' + str(number) + '. ' + folder + '\n')
